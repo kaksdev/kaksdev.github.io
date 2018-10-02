@@ -1,0 +1,19 @@
+---
+layout: post
+title:  ".Net Framework 3.5 Installation Fail in Windows 10. Error Code: 0x800F0954"
+date:   2018-10-01 00:00:00 +0800
+categories: Windows10 Fix
+---
+Installing .NET in Windows 10 with WSUS may fail.
+One workaround is to bypass WSUS as follows:
+1. Press `CTRL+R`
+2. Type `regedit`
+3. Press `ENTER` or click `OK`
+4. Browse registry location to `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU`
+5. Click `UseWUServer` and change value to `0`
+6. Restart `Windows Update` service
+7. Install .NET
+8. Return `UseWUServer` back to its original value once done
+
+<br><br>
+`WSUS` --> Windows Server Update Service
